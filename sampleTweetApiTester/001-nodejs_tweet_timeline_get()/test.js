@@ -6,8 +6,7 @@ const app = express();
 const needle = require('needle');
 // The code below sets the bearer token from your environment variables
 // To set environment variables on Mac OS X, run the export command below from the terminal: 
-// export BEARER_TOKEN='YOUR-TOKEN' 
-// const token = 'AAAAAAAAAAAAAAAAAAAAAFIWFQEAAAAAhUr5DBoT%2BQ5r6K5SD7p2CG3vMnA%3DoK5be16wNyafBdFKvMdhBXwjLLufpm6fdFHeks24IjsQfCuXEk'; 
+// export BEARER_TOKEN='YOUR-TOKEN'
 
 const endpointUrl = 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=treasonstickers'
 
