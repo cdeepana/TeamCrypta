@@ -9,7 +9,6 @@ const download = (url, path, callback) => {
   })
 }
 
-
 const url = 'https://pbs.twimg.com/media/EfiROwlU0AMOrrk.jpg'
 const path = './images/image.png'
 // const path2 = './images'
