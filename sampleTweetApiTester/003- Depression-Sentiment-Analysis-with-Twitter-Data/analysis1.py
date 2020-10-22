@@ -37,6 +37,7 @@ if __name__ == '__main__':
 
     #This line filter Twitter Streams to capture data by the keywords: 'depression', 'anxiety', 'mental health'
     stream.filter(track=['Depression', 'Anxiety', 'mental health'])
+    # stream.filter(track=['Depression', 'Anxiety', 'mental health'], is_async=True)  # this second parameter give the new thread to filter
     
 import json
 import pandas as pd
