@@ -1,6 +1,6 @@
 import argparse
 import urllib
-import urllib2
+# import urllib2
 import json
 import datetime
 import random
@@ -8,6 +8,7 @@ import os
 import pickle
 from datetime import timedelta
 import oauth2
+import six  # six is used for iteritem method usability.2020 year
 
 class TwitterData:
     #start __init__
@@ -82,6 +83,7 @@ class TwitterData:
     def oauth_req(self, url, http_method="GET", post_body=None,
                   http_headers=None):
       config = self.parse_config()
+      print(oauth2)
       consumer = oauth2.Consumer(key=config.get('consumer_key'), secret=config.get('consumer_secret'))
       token = oauth2.Token(key=config.get('access_token'), secret=config.get('access_token_secret'))
       client = oauth2.Client(consumer, token)
@@ -102,17 +104,23 @@ class TwitterData:
 
         #Add if additional params are passed
         if params:
-            for key, value in params.iteritems():
+            # for key, value in params.iteritems():
+            #     data[key] = value
+            for key, value in six.iteritems(params):
                 data[key] = value
         
-        url += urllib.urlencode(data)
-        
+        url += urllib.parse.urlencode(data)
+
+        # The urllib.urlencode() function is now urllib.parse.urlencode()
+        #
+        # the urllib.urlopen() function is now urllib.request.urlopen()
+
         response = self.oauth_req(url)
         jsonData = json.loads(response)
         tweets = []
         if 'errors' in jsonData:
-            print "API Error"
-            print jsonData['errors']
+            print("API Error")
+            print(jsonData['errors'])
         else:
             for item in jsonData['statuses']:
                 tweets.append(item['text'])            

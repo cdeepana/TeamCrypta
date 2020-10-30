@@ -80,7 +80,7 @@ class HTMLHelper:
     
     #start getResultHTML
     def getResultHTML(self, keyword, results, time, pos_count, neg_count, neut_count, checked):
-        keyword = urllib.unquote(keyword.replace("+", " "))
+        keyword = urllib.parse.unquote(keyword.replace("+", " "))
         html = '''
 <html>
 <head><title>Twitter Sentiment Analysis</title>

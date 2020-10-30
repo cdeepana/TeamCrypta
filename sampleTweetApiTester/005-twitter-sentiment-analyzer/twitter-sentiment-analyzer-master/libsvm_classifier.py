@@ -1,5 +1,5 @@
-import svm
-from svmutil import *
+# import svm
+# from svmutil import *
 import re, pickle, csv, os
 import classifier_helper, html_helper
 
@@ -220,8 +220,7 @@ class SVMClassifier:
             count += 1
         #end loop
         self.accuracy = (float(correct)/total)*100
-        print 'Total = %d, Correct = %d, Wrong = %d, Accuracy = %.2f' % \
-                                                (total, correct, wrong, self.accuracy)        
+        print('Total = %d, Correct = %d, Wrong = %d, Accuracy = %.2f' % (total, correct, wrong, self.accuracy))
     #end
 
     #start getHTML

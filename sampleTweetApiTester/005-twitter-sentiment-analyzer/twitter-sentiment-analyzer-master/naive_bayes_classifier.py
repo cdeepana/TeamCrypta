@@ -173,12 +173,11 @@ class NaiveBayesClassifier:
             total += 1
         #end loop
         self.accuracy = (float(correct)/total)*100
-        print 'Total = %d, Correct = %d, Wrong = %d, Accuracy = %.2f' % \
-                                                (total, correct, wrong, self.accuracy)        
+        print('Total = %d, Correct = %d, Wrong = %d, Accuracy = %.2f' % (total, correct, wrong, self.accuracy))
     #end
 
     #start writeOutput
-    def writeOutput(self, filename, writeOption='w'):
+    def writeOutput(self, filename, writeOption= 'w'):
         fp = open(filename, writeOption)
         for i in self.results:
             res = self.results[i]

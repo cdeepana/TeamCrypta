@@ -2,8 +2,14 @@ import sys
 import re
 import classifier_helper, html_helper, pickle
 
-reload(sys)
-sys.setdefaultencoding = 'utf-8'
+if(sys.version_info.major>=3):
+    def reload(sys):
+        import importlib
+        importlib.reload(sys)
+        sys.setdefaultencoding = 'utf-8'
+
+# reload(sys)
+# sys.setdefaultencoding = 'utf-8'
 
 #start class
 class BaselineClassifier:

@@ -183,8 +183,7 @@ class MaxEntClassifier:
             total += 1
         #end loop
         self.accuracy = (float(correct)/total)*100
-        print 'Total = %d, Correct = %d, Wrong = %d, Accuracy = %.2f' % \
-                                                (total, correct, wrong, self.accuracy)        
+        print('Total = %d, Correct = %d, Wrong = %d, Accuracy = %.2f' % (total, correct, wrong, self.accuracy))
     #end
 
     #start analyzeTweets
@@ -196,7 +195,7 @@ class MaxEntClassifier:
                 d[word] += 1
         #end loop
         for w in sorted(d, key=d.get, reverse=True):
-            print w, d[w]
+            print(w, d[w])
     #end
 
     #start writeOutput

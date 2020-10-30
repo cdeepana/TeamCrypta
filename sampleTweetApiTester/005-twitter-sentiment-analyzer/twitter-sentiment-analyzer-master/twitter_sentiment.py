@@ -50,6 +50,8 @@ class index:
                                                   trainingDataFile, classifierDumpFile, trainingRequired)
                     nb.classify()
                     return nb.getHTML()
+                    # return print('testing ok')
+
                 elif(method == 'maxentropy'):
                     trainingDataFile = 'data/training_neatfile.csv'                
                     classifierDumpFile = 'data/maxent_trained_model.pickle'

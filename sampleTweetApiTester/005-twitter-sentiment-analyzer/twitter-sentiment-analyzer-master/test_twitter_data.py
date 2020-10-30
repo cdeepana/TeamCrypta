@@ -6,4 +6,4 @@ keyword = 'iphone'
 time = 'today'
 twitterData = get_twitter_data.TwitterData()
 tweets = twitterData.getTwitterData(keyword, time)
-print tweets
+print(tweets)
