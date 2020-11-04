@@ -33,7 +33,7 @@ class TwitterData:
             #end loop
             
             #Write data to a pickle file
-            filename = 'data/weekTweets/weekTweets_'+urllib.unquote(keyword.replace("+", " "))+'_'+str(int(random.random()*10000))+'.txt'
+            filename = 'data/weekTweets/weekTweets_'+urllib.parse.unquote(keyword.replace("+", " "))+'_'+str(int(random.random()*10000))+'.txt'
             outfile = open(filename, 'wb')        
             pickle.dump(self.weekTweets, outfile)        
             outfile.close()
@@ -83,7 +83,7 @@ class TwitterData:
     def oauth_req(self, url, http_method="GET", post_body=None,
                   http_headers=None):
       config = self.parse_config()
-      print(oauth2)
+      print("get_twitter_data.py => oauth2 file location ==> {}".format(oauth2))
       consumer = oauth2.Consumer(key=config.get('consumer_key'), secret=config.get('consumer_secret'))
       token = oauth2.Token(key=config.get('access_token'), secret=config.get('access_token_secret'))
       client = oauth2.Client(consumer, token)

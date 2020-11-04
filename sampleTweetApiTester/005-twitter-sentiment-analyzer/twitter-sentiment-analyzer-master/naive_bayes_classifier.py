@@ -1,6 +1,7 @@
 import nltk.classify
 import re, pickle, csv, os
 import classifier_helper, html_helper
+import codecs
 
 #start class
 class NaiveBayesClassifier:
@@ -24,12 +25,12 @@ class NaiveBayesClassifier:
         self.time = time
         self.keyword = keyword
         self.html = html_helper.HTMLHelper()
-        
+
         #call training model
         if(trainingRequired):
             self.classifier = self.getNBTrainedClassifer(trainingDataFile, classifierDumpFile)
         else:
-            f1 = open(classifierDumpFile)            
+            f1 = open(classifierDumpFile, 'rb')
             if(f1):
                 self.classifier = pickle.load(f1)                
                 f1.close()                
@@ -86,12 +87,13 @@ class NaiveBayesClassifier:
     
     #start getFilteredTrainingData
     def getFilteredTrainingData(self, trainingDataFile):
-        fp = open( trainingDataFile, 'rb' )
+        fp = open(trainingDataFile, 'rb')
         min_count = self.getMinCount(trainingDataFile)  
         min_count = 40000
         neg_count, pos_count, neut_count = 0, 0, 0
         
-        reader = csv.reader( fp, delimiter=',', quotechar='"', escapechar='\\' )
+        # reader = csv.reader( fp, delimiter=',', quotechar='"', escapechar='\\' )
+        reader = csv.reader(codecs.iterdecode(fp, 'utf-8'), delimiter=',', quotechar='"', escapechar='\\' )
         tweetItems = []
         count = 1       
         for row in reader:
@@ -120,8 +122,9 @@ class NaiveBayesClassifier:
 
     #start getMinCount
     def getMinCount(self, trainingDataFile):
-        fp = open( trainingDataFile, 'rb' )
-        reader = csv.reader( fp, delimiter=',', quotechar='"', escapechar='\\' )
+        fp = open(trainingDataFile, 'rb')
+        # reader = csv.reader(fp, delimiter=',', quotechar='"', escapechar='\\')
+        reader = csv.reader(codecs.iterdecode(fp,'utf-8'), delimiter=',', quotechar='"', escapechar='\\')
         neg_count, pos_count, neut_count = 0, 0, 0
         for row in reader:
             sentiment = row[0]
