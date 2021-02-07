@@ -1,26 +1,39 @@
 <div class="container">
-  <!-- Default form contact -->
 <form class="row justify-content-center" class="text-center border border-light p-5" [formGroup]="userInputForm" (ngSubmit)="onSubmit(userInputForm.value)">
 
   <p class="h4 mb-4">Stress Identification System - User initialization Form</p>
 
 
-  <input type="text" formControlName="username" id="defaultContactFormName" mdbInput
-    class="form-control mb-4" placeholder="Name">
+  <div class="md-form horizontal-align-element">
+    <div class="label-Area-Style">Enter Twitter user name</div>
+    <input  type="text" formControlName="username" id="defaultContactFormName" mdbInput
+      class="form-control" placeholder="@testname">
+  </div>
+  
+  <div class="md-form horizontal-align-element">
+    <div class="label-Area-Style">Enter Date Of Birth</div>
+    <input  type="date" formControlName="dob" id="defaultContactFormEmail" mdbInput class="form-control mb-4"
+      placeholder="Date Of Birth">
+  </div>
+  
+  
+  <div class="md-form horizontal-align-element">
+    <div class="label-Area-Style">Select Your Region</div>
+    <select  formControlName="location" class="browser-default custom-select input-Area-Style">
+      <label for="form1" class="">Example label</label>
+      <option *ngFor="let country of country_array" [value]="country.name">{{country.name}}</option>
+    </select>
+  </div>
 
-  <input type="date" formControlName="dob" id="defaultContactFormEmail" mdbInput
-    class="form-control mb-4" placeholder="Birth Date">
 
-  <input type="text" formControlName="location" id="defaultContactFormName" mdbInput
-    class="form-control mb-4" placeholder="Location">
+  <div class="camera-button">
+    <button mdbBtn type="button" gradient="purple" size="lg" (click)="basicModal.show()"mdbWavesEffect>Capture Image</button>
+  </div>
 
-  <input type="text" formControlName="image" id="defaultContactFormName" mdbInput
-    class="form-control mb-4" placeholder="Name">
-
-
-  <!-- Send button -->
-  <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect"
-    mdbWavesEffect type="submit" >Send</button>
+  <div class="submit-button">
+    <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect"
+    mdbWavesEffect type="submit" >Submit</button>
+  </div>
 
 </form>
 <!-- Default form contact -->
@@ -29,24 +42,12 @@
 
 <!-- <app-camera-page></app-camera-page> -->
 
-<button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Launch demo modal</button>
+<!-- <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Launch demo modal</button> -->
 
 <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
-          <span aria-hidden="true">×</span>
-        </button>
-        <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <app-camera-page></app-camera-page>
-      </div>
-      <div class="modal-footer">
-        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
-        <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save!</button>
-      </div>
+        <app-camera2-page ></app-camera2-page>
     </div>
   </div>
 </div>

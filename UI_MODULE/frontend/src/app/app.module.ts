@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +12,7 @@ import { CameraPageComponent } from './camera-page/camera-page.component';
 import { Camera2PageComponent } from './camera2-page/camera2-page.component';
 
 @NgModule({
-  declarations: [			
+  declarations: [
     AppComponent,
       HomePageComponent,
       CameraPageComponent,
@@ -22,7 +23,8 @@ import { Camera2PageComponent } from './camera2-page/camera2-page.component';
     AppRoutingModule,
     ReactiveFormsModule,
     WebcamModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

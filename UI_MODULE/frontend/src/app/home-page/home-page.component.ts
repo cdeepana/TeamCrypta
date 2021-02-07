@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder  } from '@angular/forms'
+import { FormBuilder  } from '@angular/forms';
+import { HttpClient  } from '@angular/common/http'
 
 import { Subject, Observable} from 'rxjs'
 // import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam'
@@ -13,10 +14,10 @@ import { Subject, Observable} from 'rxjs'
 export class HomePageComponent implements OnInit {
 
   userInputForm:any;
-
-
-
-  constructor(private formBuilder: FormBuilder) {
+  private countries_list = 'assets/countries.json';
+  country_array:any;
+  
+  constructor(private http: HttpClient,private formBuilder: FormBuilder) {
 
     this.userInputForm = this.formBuilder.group({
       username: '',
@@ -27,7 +28,14 @@ export class HomePageComponent implements OnInit {
     })
   }
 
-  ngOnInit(){}
+  ngOnInit(){
+    this.http.get(this.countries_list) // get region list
+      .subscribe( (res)=>{
+      this.country_array = res
+    },
+    err =>console.log("err",err)
+    )
+  }
 
 
   onSubmit(data){

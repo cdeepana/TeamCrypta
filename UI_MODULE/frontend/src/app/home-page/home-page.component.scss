@@ -21,3 +21,28 @@
   ul.links {
     padding-bottom: 20px;
   }
+
+  .horizontal-align-element{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .label-Area-Style{
+    width: 35vw;
+    font-size: large;
+    text-align-last: left;
+  }
+  .camera-button{
+    text-align: end;
+  }
+  .submit-button{
+    text-align: center;
+  }
+
+  .modal-content{
+    background: none;
+  }
+
+  .modal-dialog .modal-content {
+    align-items: center;
+}
