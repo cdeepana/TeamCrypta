@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, OnInit, ElementRef } from '@angular/core';
 
 @Component({
     selector: 'app-camera2-page',
@@ -17,11 +17,6 @@ export class Camera2PageComponent implements OnInit {
 
     public constructor() {
         this.captures = [];
-    }
-
-    public ngOnInit() { }
-
-    public ngAfterViewInit() {
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
                 this.video.nativeElement.srcObject = stream;
@@ -30,10 +25,16 @@ export class Camera2PageComponent implements OnInit {
         }
     }
 
+    ngOnInit(){
+        this.captures = [];
+        console.log("one");
+    }
+
+
     public capture() {
         this.canvas.nativeElement.getContext("2d").drawImage(this.video.nativeElement, 0, 0, 640, 480);
-        console.log(this.canvas.nativeElement.toDataURL("image/png"));
         this.captures.push(this.canvas.nativeElement.toDataURL("image/png"));
+        console.log("this.canvas ==>",this.captures);
     }
 
 }

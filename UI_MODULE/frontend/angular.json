@@ -122,3 +122,13 @@
     }},
   "defaultProject": "frontend"
 }
+          "configurations": {
+            "production": {
+              "devServerTarget": "frontend:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "frontend"
+}

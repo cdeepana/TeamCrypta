@@ -1,0 +1,14 @@
+{
+  "name": "imgurl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "imgurl.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chathura",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
