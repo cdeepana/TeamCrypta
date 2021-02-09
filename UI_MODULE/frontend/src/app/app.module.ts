@@ -14,10 +14,10 @@ import { Camera2PageComponent } from './camera2-page/camera2-page.component';
 @NgModule({
   declarations: [
     AppComponent,
-      HomePageComponent,
-      CameraPageComponent,
-      Camera2PageComponent
-   ],
+    HomePageComponent,
+    CameraPageComponent,
+    Camera2PageComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,42 +1,44 @@
 <div class="container">
-<form class="row justify-content-center" class="text-center border border-light p-5" [formGroup]="userInputForm" (ngSubmit)="onSubmit(userInputForm.value)">
+  <form class="row justify-content-center" class="text-center border border-light p-5" [formGroup]="userInputForm"
+    (ngSubmit)="onSubmit(userInputForm.value)">
 
-  <p class="h4 mb-4">Stress Identification System - User initialization Form</p>
-
-
-  <div class="md-form horizontal-align-element">
-    <div class="label-Area-Style">Enter Twitter user name</div>
-    <input  type="text" formControlName="username" id="defaultContactFormName" mdbInput
-      class="form-control" placeholder="@testname">
-  </div>
-  
-  <div class="md-form horizontal-align-element">
-    <div class="label-Area-Style">Enter Date Of Birth</div>
-    <input  type="date" formControlName="dob" id="defaultContactFormEmail" mdbInput class="form-control mb-4"
-      placeholder="Date Of Birth">
-  </div>
-  
-  
-  <div class="md-form horizontal-align-element">
-    <div class="label-Area-Style">Select Your Region</div>
-    <select  formControlName="location" class="browser-default custom-select input-Area-Style">
-      <label for="form1" class="">Example label</label>
-      <option *ngFor="let country of country_array" [value]="country.name">{{country.name}}</option>
-    </select>
-  </div>
+    <p class="h4 mb-4">Stress Identification System - User initialization Form</p>
 
 
-  <div class="camera-button">
-    <button mdbBtn type="button" gradient="purple" size="lg" (click)="basicModal.show()"mdbWavesEffect>Capture Image</button>
-  </div>
+    <div class="md-form horizontal-align-element">
+      <div class="label-Area-Style">Enter Twitter user name</div>
+      <input type="text" formControlName="username" id="defaultContactFormName" mdbInput class="form-control"
+        placeholder="@testname">
+    </div>
 
-  <div class="submit-button">
-    <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect"
-    mdbWavesEffect type="submit" >Submit</button>
-  </div>
+    <div class="md-form horizontal-align-element">
+      <div class="label-Area-Style">Enter Date Of Birth</div>
+      <input type="date" formControlName="dob" id="defaultContactFormEmail" mdbInput class="form-control mb-4"
+        placeholder="Date Of Birth">
+    </div>
 
-</form>
-<!-- Default form contact -->
+
+    <div class="md-form horizontal-align-element">
+      <div class="label-Area-Style">Select Your Region</div>
+      <select formControlName="location" class="browser-default custom-select input-Area-Style">
+        <label for="form1" class="">Example label</label>
+        <option *ngFor="let country of country_array" [value]="country.name">{{country.name}}</option>
+      </select>
+    </div>
+
+
+    <div class="camera-button">
+      <button mdbBtn type="button" gradient="purple" size="lg" (click)="basicModal.show()" mdbWavesEffect>Capture
+        Image</button>
+    </div>
+
+    <div class="submit-button">
+      <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect" mdbWavesEffect
+        type="submit">Submit</button>
+    </div>
+
+  </form>
+  <!-- Default form contact -->
 
 </div>
 
@@ -44,13 +46,11 @@
 
 <!-- <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Launch demo modal</button> -->
 
-<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-        <app-camera2-page ></app-camera2-page>
+      <app-camera2-page></app-camera2-page>
     </div>
   </div>
 </div>
-
-
-

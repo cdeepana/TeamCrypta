@@ -1,48 +1,47 @@
-.container{
-    width: 60vw;
-    padding-top: 20vh;
+.container {
+  width: 60vw;
+  padding-top: 20vh;
 }
 
-  
 .actionBtn {
-    margin-top: 5px;
-    margin-bottom: 2px;
-    font-size: 1.2em;
-  }
-  
-  .snapshot {
-    text-align: center;
-    img {
-      max-width: 800px;
-      max-height: 800px;
-    }
-  }
-  
-  ul.links {
-    padding-bottom: 20px;
-  }
+  margin-top: 5px;
+  margin-bottom: 2px;
+  font-size: 1.2em;
+}
 
-  .horizontal-align-element{
-    display: flex;
-    justify-content: space-between;
+.snapshot {
+  text-align: center;
+  img {
+    max-width: 800px;
+    max-height: 800px;
   }
-  
-  .label-Area-Style{
-    width: 35vw;
-    font-size: large;
-    text-align-last: left;
-  }
-  .camera-button{
-    text-align: end;
-  }
-  .submit-button{
-    text-align: center;
-  }
+}
 
-  .modal-content{
-    background: none;
-  }
+ul.links {
+  padding-bottom: 20px;
+}
 
-  .modal-dialog .modal-content {
-    align-items: center;
+.horizontal-align-element {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label-Area-Style {
+  width: 35vw;
+  font-size: large;
+  text-align-last: left;
+}
+.camera-button {
+  text-align: end;
+}
+.submit-button {
+  text-align: center;
+}
+
+.modal-content {
+  background: none;
+}
+
+.modal-dialog .modal-content {
+  align-items: center;
 }

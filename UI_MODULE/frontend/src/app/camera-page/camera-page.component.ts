@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder  } from '@angular/forms'
+import { FormBuilder } from '@angular/forms'
 
-import { Subject, Observable} from 'rxjs'
+import { Subject, Observable } from 'rxjs'
 import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam'
 
 
@@ -22,15 +22,15 @@ export class CameraPageComponent implements OnInit {
     // height: {ideal: 576}
   };
   public errors: WebcamInitError[] = [];
-  
+
   // latest snapshot
   public webcamImage: WebcamImage = null;
-  
+
   // webcam snapshot trigger
   private trigger: Subject<void> = new Subject<void>();
   // switch to next / previous / specific webcam; true/false: forward/backwards, string: deviceId
-  private nextWebcam: Subject<boolean|string> = new Subject<boolean|string>();
-  
+  private nextWebcam: Subject<boolean | string> = new Subject<boolean | string>();
+
 
   constructor() { }
 
@@ -42,7 +42,7 @@ export class CameraPageComponent implements OnInit {
   }
 
   public triggerSnapshot(): void {
-    console.log("webcamImage",JSON.stringify(this.webcamImage));
+    console.log("webcamImage", JSON.stringify(this.webcamImage));
     this.trigger.next();
   }
 
@@ -54,7 +54,7 @@ export class CameraPageComponent implements OnInit {
     this.errors.push(error);
   }
 
-  public showNextWebcam(directionOrDeviceId: boolean|string): void {
+  public showNextWebcam(directionOrDeviceId: boolean | string): void {
     // true => move forward through devices
     // false => move backwards through devices
     // string => move to device with given deviceId
@@ -75,12 +75,12 @@ export class CameraPageComponent implements OnInit {
     return this.trigger.asObservable();
   }
 
-  public get nextWebcamObservable(): Observable<boolean|string> {
+  public get nextWebcamObservable(): Observable<boolean | string> {
     return this.nextWebcam.asObservable();
   }
 
-  onSubmit(data){
-    console.log("submit clicked !",data);
+  onSubmit(data) {
+    console.log("submit clicked !", data);
   }
 
 }

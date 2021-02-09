@@ -25,7 +25,7 @@ export class Camera2PageComponent implements OnInit {
         }
     }
 
-    ngOnInit(){
+    ngOnInit() {
         this.captures = [];
         console.log("one");
     }
@@ -34,7 +34,7 @@ export class Camera2PageComponent implements OnInit {
     public capture() {
         this.canvas.nativeElement.getContext("2d").drawImage(this.video.nativeElement, 0, 0, 640, 480);
         this.captures.push(this.canvas.nativeElement.toDataURL("image/png"));
-        console.log("this.canvas ==>",this.captures);
+        console.log("this.canvas ==>", this.captures);
     }
 
 }
