@@ -36,6 +36,7 @@ class index:
                 return html.getDefaultHTML(error=2)
             
             tweets = twitterData.getTwitterData(keyword, time)
+            # tweeets = 'I was sad history in those days'
             if(tweets):
                 if(method == 'baseline'):
                     bc = baseline_classifier.BaselineClassifier(tweets, keyword, time)
@@ -49,9 +50,11 @@ class index:
                     trainingRequired = 0
                     nb = naive_bayes_classifier.NaiveBayesClassifier(tweets, keyword, time, \
                                                   trainingDataFile, classifierDumpFile, trainingRequired)
-                    nb.classify()
-                    return nb.getHTML()
+                    # nb.classify()
+                    nb.classifytext()
+                    # return nb.getHTML()
                     # return print('testing ok')
+                    return;
 
                 elif(method == 'maxentropy'):
                     trainingDataFile = 'data/training_neatfile.csv'                

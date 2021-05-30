@@ -85,7 +85,7 @@ tweets = []
 
 print("row data %s",inpTweets)
 for row in inpTweets:
-
+    print("row  --> %s",row)
     sentiment = row[0]
     tweet = row[1]
     processedTweet = processTweet(tweet)

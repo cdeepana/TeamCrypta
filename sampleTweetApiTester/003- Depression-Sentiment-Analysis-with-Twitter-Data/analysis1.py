@@ -57,7 +57,7 @@ if __name__ == '__main__':
         except:
             continue
 
-    print (len(tweets_data))
+    # print (len(tweets_data))
     '''
     tweets = pd.DataFrame()
     

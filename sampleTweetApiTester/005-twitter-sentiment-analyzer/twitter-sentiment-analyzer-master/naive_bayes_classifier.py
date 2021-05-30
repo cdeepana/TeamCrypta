@@ -81,7 +81,7 @@ class NaiveBayesClassifier:
         classifier = nltk.NaiveBayesClassifier.train(training_set)
         outfile = open(classifierDumpFile, 'wb')        
         pickle.dump(classifier, outfile)        
-        outfile.close()        
+        outfile.close()    
         return classifier
     #end
     
@@ -141,6 +141,7 @@ class NaiveBayesClassifier:
     #start classify
     def classify(self):        
         for i in self.tweets:
+            print(self.tweets[i])
             tw = self.tweets[i]
             count = 0
             res = {}
@@ -159,6 +160,16 @@ class NaiveBayesClassifier:
             self.results[i] = res
         #end outer loop
     #end
+
+
+
+    def classifytext(self):
+      
+        t = "i was happy"
+        label = self.classifier.classify(self.helper.extract_features(t.split()))
+        print(label)
+        print('finished')
+       
 
     #start accuracy
     def accuracy(self):
